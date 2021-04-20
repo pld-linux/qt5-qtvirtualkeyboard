@@ -79,6 +79,7 @@ Requires:	Qt5Core-devel >= %{qtbase_ver}
 Requires:	Qt5Gui-devel >= %{qtbase_ver}
 Requires:	Qt5Qml-devel >= %{qtdeclarative_ver}
 Requires:	Qt5Quick-devel >= %{qtdeclarative_ver}
+Requires:	Qt5VirtualKeyboard = %{version}-%{release}
 
 %description -n Qt5VirtualKeyboard-devel
 Qt5 VirtualKeyboard - development files.
