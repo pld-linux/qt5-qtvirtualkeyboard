@@ -6,13 +6,14 @@
 %define		orgname		qtvirtualkeyboard
 %define		qtbase_ver		%{version}
 %define		qtdeclarative_ver	%{version}
+%define		qtquickcontrols2_ver	%{version}
 %define		qtsvg_ver		%{version}
 %define		qttools_ver		%{version}
 Summary:	The Qt5 VirtualKeyboard library
 Summary(pl.UTF-8):	Biblioteka Qt5 VirtualKeyboard
 Name:		qt5-%{orgname}
 Version:	5.15.4
-Release:	1
+Release:	2
 License:	GPL v3+ or commercial
 Group:		X11/Libraries
 Source0:	https://download.qt.io/official_releases/qt/5.15/%{version}/submodules/%{orgname}-everywhere-opensource-src-%{version}.tar.xz
@@ -22,6 +23,7 @@ BuildRequires:	Qt5Core-devel >= %{qtbase_ver}
 BuildRequires:	Qt5Gui-devel >= %{qtbase_ver}
 BuildRequires:	Qt5Qml-devel >= %{qtdeclarative_ver}
 BuildRequires:	Qt5Quick-devel >= %{qtdeclarative_ver}
+BuildRequires:	Qt5Quick-controls2-devel >= %{qtquickcontrols2_ver}
 BuildRequires:	Qt5Svg-devel >= %{qtsvg_ver}
 BuildRequires:	hunspell-devel
 BuildRequires:	libxcb-devel
@@ -150,11 +152,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libQt5*.so.5.??
 # obsoleted by pkg-config
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/libQt5*.la
-
-# remove compiled examples (package only sources)
-for d in $RPM_BUILD_ROOT%{_examplesdir}/qt5/virtualkeyboard/* ; do
-	[ -d "$d" ] && %{__rm} "$d/$(basename $d)"
-done
 
 %clean
 rm -rf $RPM_BUILD_ROOT
