@@ -11,12 +11,12 @@
 Summary:	The Qt5 VirtualKeyboard library
 Summary(pl.UTF-8):	Biblioteka Qt5 VirtualKeyboard
 Name:		qt5-%{orgname}
-Version:	5.15.2
+Version:	5.15.4
 Release:	1
 License:	GPL v3+ or commercial
 Group:		X11/Libraries
-Source0:	https://download.qt.io/official_releases/qt/5.15/%{version}/submodules/%{orgname}-everywhere-src-%{version}.tar.xz
-# Source0-md5:	a66c584c6b77adb93e555417bea9f8f3
+Source0:	https://download.qt.io/official_releases/qt/5.15/%{version}/submodules/%{orgname}-everywhere-opensource-src-%{version}.tar.xz
+# Source0-md5:	b19663559ecc46dd2e7e72cf95d9846a
 URL:		https://www.qt.io/
 BuildRequires:	Qt5Core-devel >= %{qtbase_ver}
 BuildRequires:	Qt5Gui-devel >= %{qtbase_ver}
